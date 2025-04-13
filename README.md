@@ -32,4 +32,14 @@ then
 
 ## To run the stack:
 
-```docker-compose up -d```
+```
+docker compose up -d
+```  
+NB the -d parameter 'detaches' the output stack from the shell session used to initiate it, without the -d the stack will log any output direct to the terminal, and will stop if the shell session is closed.
+
+## Other useful commands
+
+* `docker compose down`  - shuts down the stack and removes containers and networks, but will not delete volumes and directory/file mounts so e.g. config files will be safe
+* `docker ps`  - will list all the running containers on the host, `docker ps -a` - will list all containers (running and stopped)
+* `docker restart <containername>` - will restart a particulat container, `stop` and `start` can also be used seperately
+* `docker logs <containername>` will display the latest state of the container log file, useful to diagnose issues
